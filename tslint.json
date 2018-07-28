@@ -1,9 +1,12 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
+        "tslint:recommended",
+        "tslint-react"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "quotemark": [true, "single", "jsx-double", "avoid-escape", "avoid-template"]
+    },
     "rulesDirectory": []
 }
