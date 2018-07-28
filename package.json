@@ -7,10 +7,14 @@
   "author": "Eduardo Aparicio Cardenes",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "dev": "webpack-dev-server --mode=development"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
     "webpack": "^4.16.3",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }
