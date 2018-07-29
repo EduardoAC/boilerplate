@@ -11,7 +11,10 @@
     "dev": "webpack-dev-server --mode=development"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-plugin-relay": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
     "relay-compiler": "^1.6.0",

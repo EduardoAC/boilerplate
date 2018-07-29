@@ -13,15 +13,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(tsx|ts)$/,
+        test: /\.ts(x?)$/,
         enforce: 'pre',
         loader: 'tslint-loader',
         options: { /* Loader options go here */ }
       },
       {
-        test: /\.(tsx|ts)?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { babelrc: true }
+          },
+          {
+            loader: 'ts-loader'
+          }
+        ]
       }
     ]
   },
@@ -34,7 +42,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'assets', 'index.template.html'),
     }),
     new RelayCompilerWebpackPlugin({
-      schema: path.resolve(__dirname, 'schema.graphql'), // or schema.json or a GraphQLSchema instance
+      schema: path.resolve(__dirname, 'data', 'schema.graphql'), // or schema.json or a GraphQLSchema instance
       src: sourceFiles,
     })
   ]
